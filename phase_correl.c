@@ -112,12 +112,12 @@ void ifft2D(double *input, int width, int height) {
 }
 
 void computeNormalized(double *f, double *g, double *r) {
-    double a1 = (f[1] != 0.0f) ? ((f[0] != 0.0f) ? atan(f[1] / fabs(f[0])) : M_PI * f[1] / (2.0f * fabs(f[1]))) : 0.0f;
+    double a1 = (f[1] != 0.0f) ? ((f[0] != 0.0f) ? atan(f[1] / abs(f[0])) : M_PI * f[1] / (2.0f * abs(f[1]))) : 0.0f;
     if (f[0] < 0.0f) {
         a1 = ((f[1] < 0.0f) ? -1.0f : 1.0f) * M_PI - a1;
     }
 
-    double a2 = (g[1] != 0.0f) ? ((g[0] != 0.0f) ? atan(g[1] / fabs(g[0])) : M_PI * g[1] / (2.0f * fabs(g[1]))) : 0.0f;
+    double a2 = (g[1] != 0.0f) ? ((g[0] != 0.0f) ? atan(g[1] / abs(g[0])) : M_PI * g[1] / (2.0f * abs(g[1]))) : 0.0f;
     if (g[0] < 0.0f) {
         a2 = ((g[1] < 0.0f) ? -1.0f : 1.0f) * M_PI - a2;
     }
